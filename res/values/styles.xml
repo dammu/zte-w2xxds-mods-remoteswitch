@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- remote-mode HOME: just the wallpaper, the chooser floats above it -->
+    <style name="Backdrop" parent="@android:style/Theme.DeviceDefault.Wallpaper.NoTitleBar">
+        <item name="android:windowSplashScreenBackground">@android:color/transparent</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@android:color/transparent</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
+    </style>
+
+    <!-- settings: our own two-pane chrome, so no action bar; dialogs / switches follow light-dark -->
+    <style name="Settings" parent="@android:style/Theme.DeviceDefault.DayNight">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:colorAccent">#FF1967D2</item>
+    </style>
+
+    <!-- the chooser: floating, translucent window; background / blur / size are set in OverlayActivity -->
+    <style name="Overlay" parent="@android:style/Theme.DeviceDefault.Dialog.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowElevation">24dp</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowSoftInputMode">stateHidden</item>
+        <item name="android:windowAnimationStyle">@style/OverlayAnim</item>
+        <item name="android:windowSplashScreenBackground">@android:color/transparent</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@android:color/transparent</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
+    </style>
+
+    <!-- every open/close path points at the same spring, the app underneath holds still -->
+    <style name="OverlayAnim">
+        <item name="android:windowEnterAnimation">@anim/overlay_enter</item>
+        <item name="android:windowExitAnimation">@anim/overlay_exit</item>
+        <item name="android:activityOpenEnterAnimation">@anim/overlay_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/hold</item>
+        <item name="android:activityCloseEnterAnimation">@anim/hold</item>
+        <item name="android:activityCloseExitAnimation">@anim/overlay_exit</item>
+        <item name="android:taskOpenEnterAnimation">@anim/overlay_enter</item>
+        <item name="android:taskOpenExitAnimation">@anim/hold</item>
+        <item name="android:taskCloseEnterAnimation">@anim/hold</item>
+        <item name="android:taskCloseExitAnimation">@anim/overlay_exit</item>
+        <item name="android:taskToFrontEnterAnimation">@anim/overlay_enter</item>
+        <item name="android:taskToFrontExitAnimation">@anim/hold</item>
+        <item name="android:taskToBackEnterAnimation">@anim/hold</item>
+        <item name="android:taskToBackExitAnimation">@anim/overlay_exit</item>
+    </style>
+
+    <style name="OverlayAnimTop" parent="OverlayAnim">
+        <item name="android:windowEnterAnimation">@anim/overlay_enter_top</item>
+        <item name="android:activityOpenEnterAnimation">@anim/overlay_enter_top</item>
+        <item name="android:taskOpenEnterAnimation">@anim/overlay_enter_top</item>
+        <item name="android:taskToFrontEnterAnimation">@anim/overlay_enter_top</item>
+    </style>
+</resources>

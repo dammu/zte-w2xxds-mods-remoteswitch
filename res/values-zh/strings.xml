@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 简体中文。系统语言为中文时使用；其它语言用 values/（英文）。两个文件的条目一一对应。 -->
+<resources>
+    <string name="app_name">远程切换</string>
+    <string name="module_desc">把键盘 F9 的短按/长按接管为远程客户端管理器。作用域：uSmartLauncher（短按）、HJQBIND（长按）。</string>
+    <string name="settings_title">远程切换 · 设置</string>
+    <string name="module_inactive">LSPosed 模块未生效：模式不会切换，热键不会透传</string>
+    <string name="restore_defaults">恢复默认</string>
+    <string name="bindings_not_synced">hook 未生效，按键设置没有同步到 F9（启用模块后重开设置页再改一次）</string>
+    <string name="row_boot">开机后</string>
+    <string-array name="boot_labels">
+        <item>回到平板模式</item>
+        <item>恢复重启前的模式</item>
+    </string-array>
+    <string name="chooser_section">悬浮UI</string>
+    <string name="blur_behind">背后整屏模糊</string>
+    <string name="preview_chooser">预览</string>
+    <string name="add_app">添加应用</string>
+    <string name="rescan">重新扫描</string>
+    <string name="edit_note">备注</string>
+
+    <string-array name="action_labels">
+        <item>弹悬浮UI</item>
+        <item>直连上次目标</item>
+        <item>回平板</item>
+        <item>切到下一个目标</item>
+        <item>启动指定目标…</item>
+        <item>交回原厂逻辑</item>
+        <item>忽略</item>
+    </string-array>
+    <string-array name="action_descs">
+        <item>选一个目标；打开客户端即进远程模式，Esc 原样返回</item>
+        <item>打开即进远程模式；没有记录时弹悬浮UI</item>
+        <item>退出远程模式，回到进远程前的平板 app；远程 app 留在后台</item>
+        <item>按列表顺序，跳过不可用的；打开即进远程模式</item>
+        <item>从目标列表里选一个</item>
+        <item>ZTE 原来的云电脑流程</item>
+        <item>按键不做任何事</item>
+    </string-array>
+
+    <!-- 通用 -->
+    <string name="mode_remote">远程模式</string>
+    <string name="mode_tablet">平板模式</string>
+    <string name="settings">设置</string>
+    <string name="cancel">取消</string>
+    <string name="back">返回</string>
+    <string name="save">保存</string>
+    <string name="done">完成</string>
+    <string name="undo">撤销</string>
+    <string name="last_used">上次</string>
+    <string name="list_sep">、</string>
+    <string name="tag_fmt">%1$s（%2$s）</string>
+
+
+    <!-- 悬浮UI -->
+    <string name="ov_module_off">模块未生效</string>
+    <string name="ov_running">运行中</string>
+    <string name="ov_tablet_leaves">退出远程模式</string>
+    <string name="ov_tablet_home">ZTE 桌面</string>
+    <string name="ov_banner">LSPosed 模块未生效：选客户端不会切到远程模式，系统快捷键不会透传</string>
+    <string name="ov_self_check">自检</string>
+    <string name="ov_empty_title">还没有远程目标</string>
+    <string name="ov_empty_sub">在设置里重新扫描，或手动添加客户端</string>
+    <string name="ov_target_deleted">F9 设置的「启动指定目标」已被删除 · S 打开设置换一个</string>
+    <string name="ov_unavailable_fmt">%1$s%2$s</string>
+    <string name="ov_hint_frozen">在冻结工具（如 Hail）里解冻后再试</string>
+    <string name="ov_hint_profile">先在系统里开启这个工作资料</string>
+    <string name="ov_hint_gone">可在 设置 › 远程目标 里删掉这一项</string>
+    <string name="ov_hint_moved">在 设置 › 远程目标 点「重新扫描」</string>
+    <string name="ov_launch_failed_fmt">%1$s启动失败 · 可能刚被冻结或卸载，重新唤起悬浮UI会刷新状态</string>
+    <string name="ov_filter_hint">输入筛选：app 名或资料名…</string>
+    <string name="ov_count_filtered">匹配 %1$d 个客户端</string>
+    <string name="ov_count_all">%1$d 个客户端 · 按资料区分实例</string>
+    <string name="ov_no_match">没有匹配“%1$s”的客户端 · Esc 清空</string>
+    <string name="key_tablet_desktop">平板桌面</string>
+    <string name="hint_pick">直选</string>
+    <string name="hint_pick_unfiltered">直选（未筛选时）</string>
+    <string name="hint_move">移动</string>
+    <string name="hint_open">打开</string>
+    <string name="hint_close">关闭</string>
+
+    <!-- 不可用原因 -->
+    <string name="reason_profile_deleted">资料已删除</string>
+    <string name="reason_suspended">已暂停</string>
+    <string name="reason_profile_paused">资料已暂停</string>
+    <string name="reason_profile_stopped">资料未运行</string>
+    <string name="reason_frozen">已冻结</string>
+    <string name="reason_entry_changed">入口已变</string>
+    <string name="reason_hidden">已隐藏</string>
+    <string name="reason_uninstalled">已卸载</string>
+    <string name="reason_unavailable">不可用</string>
+
+    <!-- 默认资料名；用户在 设置 › 资料名与颜色 里改的名字原样显示，不翻译 -->
+    <string name="profile_owner">机主</string>
+    <string name="profile_clone">应用分身</string>
+    <string name="profile_other_fmt">资料 %1$d</string>
+
+    <!-- 设置：导航 -->
+    <string name="nav_status">状态</string>
+    <string name="nav_keys">F9 按键</string>
+    <string name="nav_targets">远程目标</string>
+    <string name="nav_profiles">资料名与颜色</string>
+    <string name="nav_about">关于与回滚</string>
+
+    <!-- 设置：状态 -->
+    <string name="st_hook_ok">Hook 已生效</string>
+    <string name="st_hook_off">Hook 未生效</string>
+    <string name="st_hook_ok_sub">uSmartLauncher（短按 F9）和 HJQBIND（长按 F9）都已加载模块</string>
+    <string name="st_hook_off_sub">F9 不会切换模式，远程模式下系统快捷键也不会透传</string>
+    <string name="st_recheck">重新检测</string>
+    <string name="st_checked">检测完成</string>
+    <string name="st_mode">当前模式</string>
+    <string name="st_home">默认桌面</string>
+    <string name="st_home_remote_ok">悬浮UI · 与模式一致</string>
+    <string name="st_home_tablet_ok">ZTE 桌面 · 与模式一致</string>
+    <string name="st_home_mismatch">与模式不一致</string>
+    <string name="st_fix_steps">怎么修：\n1. 下拉通知栏打开 LSPosed，启用「远程切换」模块\n2. 作用域勾选 uSmartLauncher 和 HJQBIND\n3. 电脑上运行 remoteswitch\\deploy.ps1，或重启平板</string>
+    <string name="st_no_answer">无响应</string>
+    <string name="st_defaults">（默认）</string>
+    <string name="st_collapse">收起</string>
+    <string name="st_diag">诊断详情</string>
+    <string name="st_copy_diag">复制诊断信息</string>
+    <string name="st_diag_copied">诊断信息已复制</string>
+
+    <!-- 设置：F9 按键 -->
+    <string name="keys_restore_q">恢复默认按键？</string>
+    <string name="keys_restore_body">四个格子回到：平板模式下短按/长按弹悬浮UI，远程模式下短按回平板、长按弹悬浮UI。开机策略不变。</string>
+    <string name="keys_restored">已恢复默认按键</string>
+    <string name="keys_intro">按下 F9 时做什么。悬浮UI 开着时，F9 总是关掉它。</string>
+    <string name="preset_chooser">先选目标（默认）</string>
+    <string name="preset_chooser_desc">平板里 F9 弹悬浮UI 选目标；远程会话里短按回平板（回到进远程前的 app），长按弹悬浮UI 换会话</string>
+    <string name="preset_last">直回上次会话</string>
+    <string name="preset_last_desc">平板里短按直接回上次的远程会话，长按弹悬浮UI；远程会话里同左</string>
+    <string name="preset_saved_fmt">F9：%1$s</string>
+    <string name="keys_advanced">高级：分别设置四种按法</string>
+    <string name="keys_advanced_intro">取决于按法和当时所在的模式。和默认不同的格子带蓝点。</string>
+    <string name="keys_in_tablet">平板模式时</string>
+    <string name="keys_in_remote">远程模式时</string>
+    <string name="keys_tap">短按 F9</string>
+    <string name="keys_hold">长按 F9</string>
+    <string name="cell_title_fmt">%1$s · %2$s</string>
+    <string name="boot_tablet_desc">每次开机都落在 ZTE 桌面，最稳</string>
+    <string name="boot_keep_desc">远程模式下重启，解锁后直接弹悬浮UI 选会话；关掉它就回平板</string>
+    <string name="boot_saved_fmt">开机后：%1$s</string>
+    <string name="cell_launch_fmt">启动 %1$s</string>
+    <string name="cell_target_deleted">（目标已删除）</string>
+    <string name="cell_launch_desc">不改模式，直接打开这个目标</string>
+    <string name="cell_saved_fmt">%1$s：已保存</string>
+    <string name="cell_saved_launch_fmt">%1$s：启动 %2$s</string>
+    <string name="pick_action">选择动作</string>
+    <string name="pick_target_over_fmt">%1$s · 启动指定目标</string>
+    <string name="pick_target">选一个目标</string>
+
+    <!-- 设置：悬浮UI -->
+    <string name="ch_intro">F9 唤起的悬浮UI，浮在当前画面上。样式改完下次唤起生效。</string>
+    <string name="ch_style_a">A · 居中浮窗网格</string>
+    <string name="ch_style_a_desc">紧凑卡片平铺，数字键直选、方向键移动（默认）</string>
+    <string name="ch_style_b">B · 顶部命令面板</string>
+    <string name="ch_style_b_desc">从顶部落下的两列列表，可直接输入筛选，客户端多时更快</string>
+    <string name="ch_blur_desc">悬浮UI后面的画面整屏模糊；关掉则只压暗。面板自身的毛玻璃不受影响</string>
+    <string name="ch_blur_on">背后整屏模糊：开</string>
+    <string name="ch_blur_off">背后整屏模糊：关</string>
+    <string name="ch_style_set_fmt">悬浮UI样式：%1$s</string>
+
+    <!-- 设置：远程目标 -->
+    <string name="tg_scan_added_fmt">扫描完成：新增 %1$d 个</string>
+    <string name="tg_scan_none">扫描完成：没有发现新的远程客户端</string>
+    <string name="tg_intro">标签默认跟随资料名（在「资料名与颜色」里改）；点一行可给单个目标写备注覆盖它。开关控制是否出现在悬浮UI；Alt+↑/↓ 或箭头按钮调整顺序。</string>
+    <string name="tg_empty">还没有远程目标：点右上角「重新扫描」或「添加应用」。</string>
+    <string name="tg_summary_fmt">%1$d 个 · 隐藏 %2$d</string>
+    <string name="tg_note_overrides_fmt"> · 备注覆盖资料名「%1$s」</string>
+    <string name="tg_hidden">隐藏</string>
+    <string name="tg_shown">显示</string>
+    <string name="tg_show_in_fmt">在悬浮UI显示 %1$s</string>
+    <string name="tg_up_fmt">上移 %1$s</string>
+    <string name="tg_down_fmt">下移 %1$s</string>
+    <string name="tg_delete_fmt">删除 %1$s</string>
+    <string name="tg_deleted_fmt">已删除 %1$s</string>
+    <string name="note_hint_fmt">只改这一个目标的标签；留空则跟随资料名「%1$s」。</string>
+    <string name="note_saved">备注已保存</string>
+    <string name="add_filter_hint">输入筛选：app 名、包名或资料名</string>
+    <string name="add_added_fmt">已添加 %1$s</string>
+    <string name="add_overline">点一个即添加，可连续添加</string>
+
+    <!-- 设置：资料名与颜色 -->
+    <string name="pf_intro">每个用户资料一个名字和颜色。悬浮UI和目标列表里，客户端都带这个资料标签（色点 + 名字），用来区分同一 app 在不同资料里的实例。名字留空恢复默认；单个目标写了备注时以备注为准。</string>
+    <string name="pf_name_desc_fmt">%1$s 的资料名</string>
+    <string name="pf_no_targets">没有目标</string>
+    <string name="pf_used_by_fmt">用于 %1$s</string>
+    <string name="pf_color_fmt">颜色 %1$d</string>
+
+    <!-- 设置：关于与回滚 -->
+    <string name="ab_version">版本</string>
+    <string name="ab_scope">模块作用域</string>
+    <string name="ab_nofreeze">不可冻结</string>
+    <string name="ab_nofreeze_desc">上面两个包：冻结 uSmartLauncher 会让短按 F9 软重启系统</string>
+    <string name="ab_stuck">模块关掉后卡在远程模式时（adb）</string>
+    <string name="ab_copy_cmds">复制命令</string>
+    <string name="ab_cmds_copied">三条命令已复制</string>
+    <string name="ab_force">强制回平板模式</string>
+    <string name="ab_force_desc">切回 ZTE 桌面并关闭热键透传，远程 app 留在后台</string>
+    <string name="ab_force_btn">回平板模式</string>
+    <string name="ab_force_q">强制回平板模式？</string>
+    <string name="ab_force_body">会把默认桌面切回 ZTE 桌面并关闭系统快捷键透传。远程 app 不会被关闭。</string>
+</resources>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- English (default for every system language except Chinese, which uses values-zh/). Keep the two files in step. -->
+<resources>
+    <string name="app_name">Remote Switch</string>
+    <string name="module_desc">Turns the keyboard F9 key (tap / hold) into a remote-client manager. Scope: uSmartLauncher (tap), HJQBIND (hold).</string>
+    <string-array name="xposed_scope" translatable="false">
+        <item>com.zte.usmartlauncher</item>
+        <item>cm.komect.aqb.android.hjqbind</item>
+    </string-array>
+
+    <string name="settings_title">Remote Switch · Settings</string>
+    <string name="module_inactive">LSPosed module not active: the mode will not switch and shortcuts will not pass through</string>
+    <string name="restore_defaults">Restore defaults</string>
+    <string name="bindings_not_synced">Hook not active, so the key settings did not reach F9 (enable the module, reopen settings and change it again)</string>
+    <string name="row_boot">After boot</string>
+    <string-array name="boot_labels">
+        <item>Back to tablet mode</item>
+        <item>Restore the mode from before the reboot</item>
+    </string-array>
+    <string name="chooser_section">Floating UI</string>
+    <string name="blur_behind">Blur the whole screen behind</string>
+    <string name="preview_chooser">Preview</string>
+    <string name="add_app">Add app</string>
+    <string name="rescan">Rescan</string>
+    <string name="edit_note">Note</string>
+
+    <string-array name="action_labels">
+        <item>Show the floating UI</item>
+        <item>Open the last target</item>
+        <item>Back to the tablet</item>
+        <item>Switch to the next target</item>
+        <item>Launch a specific target…</item>
+        <item>Hand back to the vendor logic</item>
+        <item>Ignore</item>
+    </string-array>
+    <string-array name="action_descs">
+        <item>Pick a target; opening a client enters remote mode, Esc goes back unchanged</item>
+        <item>Enters remote mode; shows the floating UI when there is no last target</item>
+        <item>Leaves remote mode for the tablet app you came from; remote apps stay in the background</item>
+        <item>In list order, skipping unavailable ones; enters remote mode</item>
+        <item>Pick one from the target list</item>
+        <item>ZTE\'s original cloud PC flow</item>
+        <item>The key does nothing</item>
+    </string-array>
+    <string-array name="action_values" translatable="false">
+        <item>show_chooser</item>
+        <item>switch_last</item>
+        <item>exit_to_tablet</item>
+        <item>cycle_next</item>
+        <item>launch_target</item>
+        <item>vendor_original</item>
+        <item>none</item>
+    </string-array>
+
+    <!-- common -->
+    <string name="mode_remote">Remote mode</string>
+    <string name="mode_tablet">Tablet mode</string>
+    <string name="settings">Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="done">Done</string>
+    <string name="undo">Undo</string>
+    <string name="last_used">Last</string>
+    <string name="list_sep">, </string>
+    <string name="tag_fmt">%1$s (%2$s)</string>
+
+
+    <!-- floating UI -->
+    <string name="ov_module_off">Module not active</string>
+    <string name="ov_running">Open</string>
+    <string name="ov_tablet_leaves">Leaves remote mode</string>
+    <string name="ov_tablet_home">ZTE desktop</string>
+    <string name="ov_banner">LSPosed module not active: picking a client will not switch to remote mode, and system shortcuts will not pass through</string>
+    <string name="ov_self_check">Self-check</string>
+    <string name="ov_empty_title">No remote targets yet</string>
+    <string name="ov_empty_sub">Rescan in settings, or add clients by hand</string>
+    <string name="ov_target_deleted">The target bound to F9 (Launch a specific target) was deleted · press S to pick another</string>
+    <string name="ov_unavailable_fmt">%1$s: %2$s</string>
+    <string name="ov_hint_frozen">unfreeze it in your freezer app (e.g. Hail), then try again</string>
+    <string name="ov_hint_profile">turn this work profile on in the system first</string>
+    <string name="ov_hint_gone">you can remove it in Settings › Remote targets</string>
+    <string name="ov_hint_moved">tap Rescan in Settings › Remote targets</string>
+    <string name="ov_launch_failed_fmt">Could not open %1$s · it may have just been frozen or uninstalled; reopen the floating UI to refresh</string>
+    <string name="ov_filter_hint">Type to filter by app or profile…</string>
+    <string name="ov_count_filtered">%1$d matching clients</string>
+    <string name="ov_count_all">%1$d clients · instances told apart by profile</string>
+    <string name="ov_no_match">No client matches “%1$s” · Esc clears</string>
+    <string name="key_tablet_desktop">Tablet desktop</string>
+    <string name="hint_pick">Pick</string>
+    <string name="hint_pick_unfiltered">Pick (when not filtering)</string>
+    <string name="hint_move">Move</string>
+    <string name="hint_open">Open</string>
+    <string name="hint_close">Close</string>
+
+    <!-- why a target is unavailable -->
+    <string name="reason_profile_deleted">Profile deleted</string>
+    <string name="reason_suspended">Suspended</string>
+    <string name="reason_profile_paused">Profile paused</string>
+    <string name="reason_profile_stopped">Profile not running</string>
+    <string name="reason_frozen">Frozen</string>
+    <string name="reason_entry_changed">Entry changed</string>
+    <string name="reason_hidden">Hidden</string>
+    <string name="reason_uninstalled">Uninstalled</string>
+    <string name="reason_unavailable">Unavailable</string>
+
+    <!-- default profile names; names the user sets under Profile names & colors are shown as typed -->
+    <string name="profile_owner">Owner</string>
+    <string name="profile_clone">App clone</string>
+    <string name="profile_other_fmt">Profile %1$d</string>
+
+    <!-- settings: navigation -->
+    <string name="nav_status">Status</string>
+    <string name="nav_keys">F9 key</string>
+    <string name="nav_targets">Remote targets</string>
+    <string name="nav_profiles">Profile names &amp; colors</string>
+    <string name="nav_about">About &amp; rollback</string>
+
+    <!-- settings: status -->
+    <string name="st_hook_ok">Hook active</string>
+    <string name="st_hook_off">Hook not active</string>
+    <string name="st_hook_ok_sub">Loaded in uSmartLauncher (F9 tap) and HJQBIND (F9 hold)</string>
+    <string name="st_hook_off_sub">F9 will not switch modes, and system shortcuts will not pass through in remote mode</string>
+    <string name="st_recheck">Check again</string>
+    <string name="st_checked">Check complete</string>
+    <string name="st_mode">Current mode</string>
+    <string name="st_home">Default home</string>
+    <string name="st_home_remote_ok">Floating UI · matches the mode</string>
+    <string name="st_home_tablet_ok">ZTE desktop · matches the mode</string>
+    <string name="st_home_mismatch">Does not match the mode</string>
+    <string name="st_fix_steps">How to fix:\n1. Pull down the notification shade, open LSPosed and enable the Remote Switch module\n2. In its scope, tick uSmartLauncher and HJQBIND\n3. Run remoteswitch\\deploy.ps1 on the computer, or restart the tablet</string>
+    <string name="st_no_answer">no answer</string>
+    <string name="st_defaults">(defaults)</string>
+    <string name="st_collapse">Collapse</string>
+    <string name="st_diag">Diagnostics</string>
+    <string name="st_copy_diag">Copy diagnostics</string>
+    <string name="st_diag_copied">Diagnostics copied</string>
+
+    <!-- settings: F9 key -->
+    <string name="keys_restore_q">Restore the default keys?</string>
+    <string name="keys_restore_body">All four cells go back to: in tablet mode tap / hold shows the floating UI; in remote mode tap returns to tablet, hold shows the floating UI. The boot setting is kept.</string>
+    <string name="keys_restored">Default keys restored</string>
+    <string name="keys_intro">What F9 does. While the floating UI is up, F9 always closes it.</string>
+    <string name="preset_chooser">Pick a target first (default)</string>
+    <string name="preset_chooser_desc">On the tablet F9 opens the floating UI to pick a target; in a remote session a tap goes back to the tablet app you came from, holding opens the floating UI to switch sessions</string>
+    <string name="preset_last">Straight back to the last session</string>
+    <string name="preset_last_desc">On the tablet a tap goes straight back to the last remote session, holding opens the floating UI; in a remote session the same as the default</string>
+    <string name="preset_saved_fmt">F9: %1$s</string>
+    <string name="keys_advanced">Advanced: set each press separately</string>
+    <string name="keys_advanced_intro">By how you press it and which mode you are in. Cells that differ from the default have a blue dot.</string>
+    <string name="keys_in_tablet">In tablet mode</string>
+    <string name="keys_in_remote">In remote mode</string>
+    <string name="keys_tap">Tap F9</string>
+    <string name="keys_hold">Hold F9</string>
+    <string name="cell_title_fmt">%1$s · %2$s</string>
+    <string name="boot_tablet_desc">Always start on the ZTE desktop; the safest choice</string>
+    <string name="boot_keep_desc">After a reboot in remote mode, the floating UI is up once you unlock; closing it goes to the tablet</string>
+    <string name="boot_saved_fmt">After boot: %1$s</string>
+    <string name="cell_launch_fmt">Launch %1$s</string>
+    <string name="cell_target_deleted">(target deleted)</string>
+    <string name="cell_launch_desc">Opens this target without changing the mode</string>
+    <string name="cell_saved_fmt">%1$s: saved</string>
+    <string name="cell_saved_launch_fmt">%1$s: launch %2$s</string>
+    <string name="pick_action">Choose an action</string>
+    <string name="pick_target_over_fmt">%1$s · launch a specific target</string>
+    <string name="pick_target">Choose a target</string>
+
+    <!-- settings: floating UI -->
+    <string name="ch_intro">The floating UI that F9 brings up over the current screen. Style changes apply the next time it opens.</string>
+    <string name="ch_style_a">A · Centered grid</string>
+    <string name="ch_style_a_desc">Compact tiles; number keys pick, arrow keys move (default)</string>
+    <string name="ch_style_b">B · Top command panel</string>
+    <string name="ch_style_b_desc">A two-column list that drops from the top; type to filter, faster with many clients</string>
+    <string name="ch_blur_desc">Blurs the whole screen behind the floating UI; when off it is only dimmed. The panel\'s own frosted glass is not affected</string>
+    <string name="ch_blur_on">Blur behind: on</string>
+    <string name="ch_blur_off">Blur behind: off</string>
+    <string name="ch_style_set_fmt">Floating UI style: %1$s</string>
+
+    <!-- settings: remote targets -->
+    <string name="tg_scan_added_fmt">Scan complete: %1$d added</string>
+    <string name="tg_scan_none">Scan complete: no new remote clients found</string>
+    <string name="tg_intro">Tags follow the profile name by default (change it under Profile names &amp; colors); tap a row to give one target its own note. The switch controls whether it appears in the floating UI; Alt+↑/↓ or the arrow buttons reorder.</string>
+    <string name="tg_empty">No remote targets yet: tap Rescan or Add app at the top right.</string>
+    <string name="tg_summary_fmt">%1$d · %2$d hidden</string>
+    <string name="tg_note_overrides_fmt"> · note overrides profile name “%1$s”</string>
+    <string name="tg_hidden">Hidden</string>
+    <string name="tg_shown">Shown</string>
+    <string name="tg_show_in_fmt">Show %1$s in the floating UI</string>
+    <string name="tg_up_fmt">Move %1$s up</string>
+    <string name="tg_down_fmt">Move %1$s down</string>
+    <string name="tg_delete_fmt">Delete %1$s</string>
+    <string name="tg_deleted_fmt">Deleted %1$s</string>
+    <string name="note_hint_fmt">Changes only this target\'s tag; leave it empty to follow the profile name “%1$s”.</string>
+    <string name="note_saved">Note saved</string>
+    <string name="add_filter_hint">Filter by app name, package or profile</string>
+    <string name="add_added_fmt">Added %1$s</string>
+    <string name="add_overline">Tap one to add it; you can add several</string>
+
+    <!-- settings: profile names & colors -->
+    <string name="pf_intro">Each user profile has one name and one color. In the floating UI and the target list every client carries this profile tag (dot + name), which tells instances of the same app in different profiles apart. Leave a name empty to restore the default; a target\'s own note wins.</string>
+    <string name="pf_name_desc_fmt">Profile name of %1$s</string>
+    <string name="pf_no_targets">No targets</string>
+    <string name="pf_used_by_fmt">Used by %1$s</string>
+    <string name="pf_color_fmt">Color %1$d</string>
+
+    <!-- settings: about & rollback -->
+    <string name="ab_version">Version</string>
+    <string name="ab_scope">Module scope</string>
+    <string name="ab_nofreeze">Do not freeze</string>
+    <string name="ab_nofreeze_desc">The two packages above: freezing uSmartLauncher makes an F9 tap soft-reboot the system</string>
+    <string name="ab_stuck">Stuck in remote mode after turning the module off (adb)</string>
+    <string name="ab_copy_cmds">Copy commands</string>
+    <string name="ab_cmds_copied">Commands copied</string>
+    <string name="ab_force">Force tablet mode</string>
+    <string name="ab_force_desc">Back to the ZTE desktop with shortcut pass-through off; remote apps stay in the background</string>
+    <string name="ab_force_btn">Tablet mode</string>
+    <string name="ab_force_q">Force tablet mode?</string>
+    <string name="ab_force_body">Sets the default home back to the ZTE desktop and turns system-shortcut pass-through off. Remote apps are not closed.</string>
+</resources>

@@ -1,0 +1,10 @@
+# build outputs
+build/
+*.apk
+*.idsig
+
+# debug signing key: created by build.ps1 on first build, keep it local
+*.keystore
+
+# private maintainer notes live in the private workspace repo (notes/remoteswitch-*.md); this file is only a local pointer
+AGENTS.md

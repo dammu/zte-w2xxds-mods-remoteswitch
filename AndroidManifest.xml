@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dev.w203ds.remoteswitch"
+    android:versionCode="1"
+    android:versionName="0.1">
+
+    <uses-sdk android:minSdkVersion="28" android:targetSdkVersion="33" />
+
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher"
+        android:hasCode="true"
+        android:allowBackup="false"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposedminversion" android:value="82" />
+        <meta-data android:name="xposeddescription" android:value="@string/module_desc" />
+        <meta-data android:name="xposedscope" android:resource="@array/xposed_scope" />
+
+        <activity
+            android:name=".ChooserActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:stateNotNeeded="true"
+            android:theme="@style/Backdrop"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden">
+            <!-- no LAUNCHER entry: F9 is the way in; settings open from the LSPosed module page -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- the floating chooser: own task + translucent window, so the app underneath stays visible -->
+        <activity
+            android:name=".OverlayActivity"
+            android:exported="false"
+            android:theme="@style/Overlay"
+            android:taskAffinity="dev.w203ds.remoteswitch.overlay"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden|navigation|uiMode" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true"
+            android:taskAffinity="dev.w203ds.remoteswitch.settings"
+            android:label="@string/settings_title"
+            android:theme="@style/Settings"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <!-- what LSPosed's "open" button on the module page looks for -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+                <!-- without DEFAULT an implicit startActivity of this filter does not resolve -->
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
